@@ -1,2 +1,2 @@
-### ALX Tasks
-- [X] Write a script to print the absolute path of the current working directory
+### ALX Shell Basics
+This repository is contains the implementation of the ALX Shell commands basic course task
