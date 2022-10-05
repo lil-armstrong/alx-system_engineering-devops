@@ -11,3 +11,4 @@
 - [X] Move the file betty from /tmp/ to /tmp/my_first_directory.
 - [X] Delete the file betty in /tmp/my_first_directory
 - [X] Delete the directory my_first_directory that is in the /tmp directory.
+- [X] Write a script that changes the working directory to the previous one.
