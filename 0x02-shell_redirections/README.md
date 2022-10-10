@@ -4,3 +4,4 @@
 - [X] Display the content of the /etc/passwd file.
 - [X] Display the content of /etc/passwd and /etc/hosts
 - [X] Display the last 10 lines of /etc/passwd
+- [X] Display the first 10 lines of /etc/passwd
