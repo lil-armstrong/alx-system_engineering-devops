@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /etc/passwd | grep -iP '^[a-z]'
+cat /etc/ssh/sshd_config | grep -iP '^[a-z]'
