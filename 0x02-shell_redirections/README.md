@@ -3,3 +3,4 @@
 - [X] Write a script that displays a confused smiley "(Ôo)'.
 - [X] Display the content of the /etc/passwd file.
 - [X] Display the content of /etc/passwd and /etc/hosts
+- [X] Display the last 10 lines of /etc/passwd
