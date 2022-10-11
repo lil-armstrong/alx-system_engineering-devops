@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{gsub("A", "Z");gsub("c", "e"); print}'
+tr Ac Ze
