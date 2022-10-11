@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'Hello world\n'
+echo "Hello World\n" 3<&1
