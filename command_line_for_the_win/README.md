@@ -86,20 +86,46 @@ cat access.log | grep "GET"
 ```bash
 grep -l "500" *
 ```
-- Print the number of lines in access.log that contain the string "GET".
+
+-   Print the number of lines in access.log that contain the string "GET".
+
 ```bash
 cat access.log | grep "GET" | wc -l
 ```
 
-- The file split-me.txt contains a list of numbers separated by a ; character.
-Split the numbers on the ; character, one number per line.
+-   The file split-me.txt contains a list of numbers separated by a ; character.
+    Split the numbers on the ; character, one number per line.
+
 ```bash
 cat split-me.txt |tr ";" "\n"
 cat split-me.txt |tr \; "\n"
 ```
 
-- Print the numbers 1 to 100 separated by spaces.
+-   Print the numbers 1 to 100 separated by spaces.
+
 ```bash
 echo {1...100}
 seq -s " " 1 100
 ```
+
+-   This challenge has text files (with a .txt extension) that contain the phrase "challenges are difficult". Delete this phrase from all text files recursively.
+
+> _Note that some files are in subdirectories so you will need to search for them._
+
+```bash
+find . -name "*.txt" -exec sed -i 's/challenges are difficult//g' {} \;
+```
+
+-   The file sum-me.txt has a list of numbers, one per line. Print the sum of these numbers.
+
+```bash
+cat sum-me.txt | xargs | sed -e 's/\ /+/g' | bc
+```
+
+-   Print all files in the current directory recursively without the leading directory path.
+
+```bash
+find . -type f -printf "%f\n"
+```
+
+- 
