@@ -19,5 +19,3 @@ while [[ $a -le LIMIT ]]; do
 
 	((a += 1))
 done
-
-exit 0

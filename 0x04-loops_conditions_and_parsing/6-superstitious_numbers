@@ -17,5 +17,3 @@ while [[ $count -le LIMIT ]]; do
 
 	((count += 1))
 done
-
-exit 0
