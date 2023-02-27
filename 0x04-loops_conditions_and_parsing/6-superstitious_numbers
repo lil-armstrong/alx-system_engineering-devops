@@ -8,12 +8,12 @@ LIMIT=20
 count=1
 
 while [[ $count -le LIMIT ]]; do
+	echo "$count"
 	case $count in
-	4) echo "bad luck from China" ;;
-	9) echo "bad luck from Japan" ;;
-	17) echo "bad luck from Italy" ;;
-	*) echo "$count" ;;
+	"4") echo "bad luck from China" ;;
+	"9") echo "bad luck from Japan" ;;
+	"17") echo "bad luck from Italy" ;;
 	esac
 
-	((count += 1))
+	((count++))
 done
