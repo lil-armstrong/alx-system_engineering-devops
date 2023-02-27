@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Display numbers from 1 to 100
+
+counter=1
+end=100
+
+while [[ $counter -le $end ]]; do
+	if [[ $counter%3 -eq 0 && $counter%5 -eq 0 ]]; then
+		echo "FizzBuzz"
+	elif [[ $counter%3 -eq 0 ]]; then
+		echo "Fizz"
+	elif [[ $counter%5 -eq 0 ]]; then
+		echo "Buzz"
+	else
+		echo "$counter"
+	fi
+
+	((counter++))
+done
