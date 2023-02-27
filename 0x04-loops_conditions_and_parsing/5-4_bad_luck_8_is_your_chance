@@ -7,7 +7,7 @@
 LIMIT=10
 a=1
 
-while ((a <= LIMIT)); do
+while [[ a -le LIMIT ]]; do
 	case a in
 	*)
 		if [[ a -eq 4 ]]; then
