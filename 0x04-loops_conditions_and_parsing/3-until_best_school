@@ -2,9 +2,9 @@
 # This script is displaying "Best School" 10 times
 
 LIMIT=10
-var=0
+var=1
 
-until ((var > LIMIT)); do
+until [[ var -gt LIMIT ]]; do
 	echo "Best School"
 	((var++))
 done

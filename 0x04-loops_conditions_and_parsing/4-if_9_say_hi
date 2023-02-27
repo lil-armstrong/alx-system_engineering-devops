@@ -7,12 +7,10 @@ LIMIT=10
 a=1
 
 while ((a <= LIMIT)); do
-	if [[ a -eq 4 ]]; then
-		echo "bad luck"
-	elif [[ a -eq 8 ]]; then
-		echo "good luck"
-	else
-		echo "Best School"
+
+	echo "Best School"
+	if [[ a -eq 9 ]]; then
+		echo "Hi"
 	fi
 	((a += 1))
 

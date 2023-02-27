@@ -4,19 +4,18 @@
 #+ displays 9 and then bad luck from Japan for the 9th loop iteration
 #+ displays 17 and then bad luck from Italy for the 17th loop iteration
 
-LIMIT=20
+LIMIT=10
 a=1
 
 while ((a <= LIMIT)); do
 	case a in
 	*)
-		echo "$a"
 		if [[ a -eq 4 ]]; then
-			echo "bad luck from China"
-		elif [[ a -eq 9 ]]; then
-			echo "bad luck from Japan"
-		elif [[ a -eq 17 ]]; then
-			echo "bad luck from Italy"
+			echo "bad luck"
+		elif [[ a -eq 8 ]]; then
+			echo "good luck"
+		else
+			echo "Best School"
 		fi
 		;;
 	esac
