@@ -5,23 +5,17 @@
 #+ displays 17 and then bad luck from Italy for the 17th loop iteration
 
 LIMIT=20
-a=1
+count=1
 
-while ((a <= LIMIT)); do
-	case a in
-	*)
-		echo "$a"
-		if [[ a -eq 4 ]]; then
-			echo "bad luck from China"
-		elif [[ a -eq 9 ]]; then
-			echo "bad luck from Japan"
-		elif [[ a -eq 17 ]]; then
-			echo "bad luck from Italy"
-		fi
-		;;
+while [[ $count -le LIMIT ]]; do
+	case $count in
+	4) echo "bad luck from China" ;;
+	9) echo "bad luck from Japan" ;;
+	17) echo "bad luck from Italy" ;;
+	*) echo "$count" ;;
 	esac
 
-	((a += 1))
+	((count += 1))
 done
 
 exit 0
