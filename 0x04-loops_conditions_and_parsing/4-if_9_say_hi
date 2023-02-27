@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays Best School 10 times,
+#+ but for the 9th iteration, displays Best School and
+#+ then Hi on a new line.
+
+LIMIT=10
+a=1
+
+while ((a <= LIMIT)); do
+	if [[ a -eq 4 ]]; then
+		echo "bad luck"
+	elif [[ a -eq 8 ]]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((a += 1))
+
+done
+
+exit 0

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20 and:
+#+ displays 4 and then bad luck from China for the 4th loop iteration
+#+ displays 9 and then bad luck from Japan for the 9th loop iteration
+#+ displays 17 and then bad luck from Italy for the 17th loop iteration
+
+LIMIT=20
+a=1
+
+while ((a <= LIMIT)); do
+	case a in
+	*)
+		echo "$a"
+		if [[ a -eq 4 ]]; then
+			echo "bad luck from China"
+		elif [[ a -eq 9 ]]; then
+			echo "bad luck from Japan"
+		elif [[ a -eq 17 ]]; then
+			echo "bad luck from Italy"
+		fi
+		;;
+	esac
+
+	((a += 1))
+done
+
+exit 0
