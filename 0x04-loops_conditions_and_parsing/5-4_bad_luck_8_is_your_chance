@@ -7,18 +7,15 @@
 LIMIT=10
 a=1
 
-while [[ a -le LIMIT ]]; do
-	case a in
-	*)
-		if [[ a -eq 4 ]]; then
-			echo "bad luck"
-		elif [[ a -eq 8 ]]; then
-			echo "good luck"
-		else
-			echo "Best School"
-		fi
-		;;
-	esac
+while [[ $a -le LIMIT ]]; do
+
+	if [[ $a -eq 4 ]]; then
+		echo "bad luck"
+	elif [[ $a -eq 8 ]]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
 
 	((a += 1))
 done
