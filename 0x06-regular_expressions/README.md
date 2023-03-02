@@ -74,37 +74,43 @@ These are characters with a soecified meaning
 
 ## 0. Simply matching School
 
-Requirements:
+**Requirements:**
 
 -   The regular expression must match School
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ## 1. Repetition Token #0
 
-<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/e7db3c377d46453588fc84f3a975661d142fee91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230302T080349Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3f545a760080e886c07a3908d85aa70cd15671029309f6eafb9c82a8886a1c2a" alt="Repetition token sample"/>
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/e7db3c377d46453588fc84f3a975661d142fee91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230302T092727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1fc78e9afca3923bc2e0e10ad90a35e2f2a7c6d502b95b7c7ff15324c146cce3" alt="Task 1 screenshot"/>
 
-Requirements:
+**Requirements:**
 
 -   Find the regular expression that will match the above cases
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ## 2. Repetition Token #1
 
-Requirements:
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/c59ff11db195d5cf17d1790a5141ae2f234786d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230302T092727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f3ee4ba69926598216c73ef54b030a833eaa7d05e058fde959ab7df80a711265" alt="task 2 screenshot"/>
+
+**Requirements:**
 
 -   Find the regular expression that will match the above cases
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ## 3. Repetition Token #2
 
-Requirements:
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/3b6bf4aeca6a0c2de584e7f5d68d11eef57ce205.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230302T092727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5675cc7dea5e7e0e4c1aeb857689076e321e8a6707310344a61b43d00a54b478" alt="3. Repetition Token #2 screenshote"/>
+	
+**Requirements:**
 
 -   Find the regular expression that will match the above cases
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 ## 4. Repetition Token #3
 
-Requirements:
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/f8dbcb9cf5ae569a8645027dc46e81cb372ce28e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230302T092727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7c5930dc55c6ad8f1698feb152cd88e092b4444cf0acbf639e7231828ca7d368" alt="4. Repetition Token #3" />
+
+**Requirements:**
 
 -   Find the regular expression that will match the above cases
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
@@ -112,7 +118,7 @@ Requirements:
 
 ## 5. Not quite HBTN yet
 
-Requirements:
+**Requirements:**
 
 -   The regular expression must be exactly matching a string that starts with h ends with n and can have any single character in between
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
