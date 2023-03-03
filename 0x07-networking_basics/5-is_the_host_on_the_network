@@ -3,8 +3,7 @@
 
 if [[ $# -eq 0 ]]; then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-
 else
 	ip=$1
-	ping -c 5 $ip
+	ping -c 5 "$ip"
 fi
