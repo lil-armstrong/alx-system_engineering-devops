@@ -12,6 +12,7 @@
 -   [TCP and UDP](https://intranet.alxswe.com/rltoken/uJbs8E9-FyATfsELpmtTIg)
 -   [Ping](https://intranet.alxswe.com/rltoken/3zBgO6r2M1Q8lUVt9g8aJw)
 -   [Positional parameters](https://intranet.alxswe.com/rltoken/3zBgO6r2M1Q8lUVt9g8aJw)
+-   [Bash Hacker Wiki](https://wiki.bash-hackers.org/scripting/posparams66)
 
 ## Ports
 
