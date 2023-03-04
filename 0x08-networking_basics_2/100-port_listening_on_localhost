@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Scrits listens on port 98 on localhost
+
+nc -lk 98
