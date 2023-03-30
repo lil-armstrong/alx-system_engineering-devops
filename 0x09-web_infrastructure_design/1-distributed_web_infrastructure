@@ -1,0 +1,12 @@
+In this schema diagram, I added two servers, each with a database (MYSQL),  web server (Nginx), application server (Django) with a code base. I added a load balancer (HAproxy) to programmatically distribute the network traffic between the servers in a manner that ensures an optimal distribution of work load on each server at a point in time. I have setup a Active-passive load balancing strategy.
+
+For a start, in this simple setup, I am deploying the predictive scheduling strategy for the load balancer. This is because, I am deploying a database cluster, where one of the server is a primary or master and the other is a replicate set of the database. The second server (secondary) is a slave that serves as a fail-safe server for the primary server. Should there be an issues with the primary server, using the predictive load balancing strategy, the load will be directed to the secondary server
+
+In this setup, there are no firewall and no SSL certificates to protect the client. So this setup is susceptible to attacks such as man-in-the-middle attack. Also since there's no monitoring, if something were to happen to any of the servers, since we are deploying the predictive load balancing strategy, the load balancer will redirect traffic to the other server, but it will be difficult for us to know when this happens unless the server is checked.
+
+An advantage of this setup is that there is an improvement made in handling the single point of failure problem. This is true for the server using the load balancer and also for the database, which is a cluster. The cluster is a Master-slave setup, hence the secondary database hold redundant data and keeps in sync with the primary database, acting as a fail-safe should any issue occur
+
+
+# IMAGE URL
+
+	- [URL]("https://github.com/lil-armstrong/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/web_stack-1-distributed_web_infrastructure.drawio.png")
