@@ -1,9 +1,93 @@
-<mxfile host="app.diagrams.net" modified="2023-03-29T08:02:00.710Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" version="21.1.1" etag="hUDbs6FVuCSJr0BBmUvF" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-30T05:44:47.256Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="Eama59B5KkKCofcBJoBF" version="21.1.1" type="github">
   <diagram name="Page-1" id="Zk0t-JC8fuV6y8V5xoAU">
-    <mxGraphModel>
+    <mxGraphModel dx="1760" dy="2062" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <UserObject label="" tooltip="Server:&#xa;A server is a physical or virtual machine that provides a service to other machines, usually over a network" id="9bGchT1JOsIv0tG_WcHA-31">
+          <mxCell style="swimlane;startSize=0;dashed=1;strokeWidth=2;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;autosize=1;noLabel=0;rounded=1;" vertex="1" parent="1">
+            <mxGeometry x="89" y="-64" width="583" height="368" as="geometry">
+              <mxRectangle x="240" y="-20" width="50" height="40" as="alternateBounds" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-46" value="" style="swimlane;startSize=0;dashed=1;strokeWidth=2;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-31">
+          <mxGeometry x="41" y="61" width="180" height="170" as="geometry">
+            <mxRectangle x="24.79" y="20" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-48" value="&lt;div&gt;Application server&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-46">
+          <mxGeometry x="20" y="80" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-56" value="Codebase" style="shape=card;whiteSpace=wrap;html=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-46">
+          <mxGeometry x="30" y="6" width="85" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-73" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1.011;entryY=0.441;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="9bGchT1JOsIv0tG_WcHA-31" source="9bGchT1JOsIv0tG_WcHA-53" target="9bGchT1JOsIv0tG_WcHA-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-53" value="" style="swimlane;startSize=0;dashed=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;strokeWidth=2;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-31">
+          <mxGeometry x="325" y="188" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-57" value="&lt;div&gt;Web server&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-53">
+          <mxGeometry x="35" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-66" value="&lt;div&gt;Server&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-31">
+          <mxGeometry x="252" y="6" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-37" value="MYSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-31">
+          <mxGeometry x="393" y="64" width="92" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-72" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;startArrow=classic;startFill=1;" edge="1" parent="9bGchT1JOsIv0tG_WcHA-31" source="9bGchT1JOsIv0tG_WcHA-46" target="9bGchT1JOsIv0tG_WcHA-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-74" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="9bGchT1JOsIv0tG_WcHA-58" target="9bGchT1JOsIv0tG_WcHA-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-58" value="Router" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="293" y="391" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-75" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="9bGchT1JOsIv0tG_WcHA-59" target="9bGchT1JOsIv0tG_WcHA-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-59" value="DNS" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="53" y="403" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-76" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="9bGchT1JOsIv0tG_WcHA-63" target="9bGchT1JOsIv0tG_WcHA-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-63" value="CLIENT" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="454" y="559" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-78" value="Information" style="swimlane;whiteSpace=wrap;html=1;autosize=1;resizeWidth=0;resizeHeight=1;" vertex="1" parent="1">
+          <mxGeometry x="689" y="-64" width="784" height="708" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-79" value="&lt;h1&gt;Server&lt;/h1&gt;&lt;p&gt;A server is a physical or virtual machine whose sole purpose is to provide services to other machines, known as clients, usually over a network&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="20" y="37" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-80" value="&lt;h1&gt;Domain name&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The domain name is simply a human-friendly alias for an machine&#39;s 32-bit IP address. For example: www.foobar.com can be the domain name for the IP address: 8.8.8.8&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="258" y="37" width="245" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-81" value="&lt;h1&gt;DNS record&lt;br&gt;&lt;/h1&gt;In the scenario we are depicting, the DNS record of www.foobar.com is a CNAME DVS record. www is a subdomain of the domain name foobar.com" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="20" y="175" width="179" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-82" value="&lt;h1&gt;Role of web server&lt;br&gt;&lt;/h1&gt;The main role of a web server is to serve web pages over the HTTP protocol to the clients" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="260" y="175" width="242" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-83" value="&lt;h1&gt;DNS record&lt;br&gt;&lt;/h1&gt;In the scenario we are depicting, the DNS record of www.foobar.com is a CNAME DVS record. www is a subdomain of the domain name foobar.com" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="7" y="416" width="179" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-84" value="&lt;h1&gt;Role of application server&lt;br&gt;&lt;/h1&gt;The main role of a application server is to serve handle complex server side business logic and access to the database, providing the appropriate services" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="249" y="416" width="231" height="158" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-85" value="&lt;h1&gt;Role of database&lt;br&gt;&lt;/h1&gt;The main role of a database is persistence and organization of data in the server" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="537" y="37" width="231" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-86" value="&lt;h1&gt;What the server uses to communicate with the client&lt;br&gt;&lt;/h1&gt;Since the schematic diagram depicts a web interaction between the client and the server, the server uses the HTTP network protocol to communicate with the client" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="537" y="175" width="231" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-87" value="&lt;h1&gt;ISSUES&lt;br&gt;&lt;/h1&gt;&lt;div&gt;- This setup has a single point of failure problem. If the web server were to have any problems, the whole communication between the client will be interrupted.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- The downtime could range from hours to days whenever a maintenance operation is performed on the server. This also will interrupt the client&#39;s communication with the service&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Cannot scale if the traffic increases over time. This system is susceptible to attacks such as DDos attack and can only handle a limited number of request at any point in time&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" vertex="1" parent="9bGchT1JOsIv0tG_WcHA-78">
+          <mxGeometry x="517" y="416" width="231" height="287" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
