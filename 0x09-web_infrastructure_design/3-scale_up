@@ -13,3 +13,7 @@ Here's is why each element is added
 - Database server: The database server stores the data that your web application needs to function. It's where all your user data, content, and configurations are stored. Separating the database from the web and application servers ensures better security and scalability, as well as performance.
 
 In summary, this infrastructure with a server, load balancer (HAproxy), web server, application server, and database server provides better scalability, reliability, availability, and security, resulting in a more stable and efficient web application.
+
+
+# IMAGE URL:
+	- [URL]("https://github.com/lil-armstrong/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/3-scale_up")

@@ -87,3 +87,8 @@ disaster in time.
 
 ## Why having servers with all the same components (database, web server and application server) might be a problem
     Servers with all the same components can be a problem because they can create a single point of failure, resource imbalances, limit scalability, and limit flexibility.
+
+# IMAGE URL
+
+    - [URL]("https://github.com/lil-armstrong/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/web_stack-2-secured_and_monitored_web_infrastructure.drawio.png")
+
