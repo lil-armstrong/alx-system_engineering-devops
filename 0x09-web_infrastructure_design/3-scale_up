@@ -1,0 +1,15 @@
+Here's is why each element is added
+
+- Server: The server is the fundamental building block of any web infrastructure. It's where all the software and data for your web application will reside. You need at least one server to host your web application.
+
+- Load balancer: A load balancer is added to distribute incoming traffic across multiple servers. This helps to ensure that no single server becomes overwhelmed with traffic, which can lead to poor performance or even downtime. By using a load balancer, you can improve the scalability, reliability, and availability of your web application.
+
+- Cluster: A cluster is a group of servers that work together to provide a higher level of service than any single server can provide. By configuring HAproxy as a cluster, you can achieve high availability, meaning that if one load balancer fails, the other one can take over without any downtime.
+
+- Web server: The web server is responsible for serving static content (HTML, CSS, JavaScript, etc.) to users who visit your website. It also handles dynamic requests by passing them to the application server.
+
+- Application server: The application server is where your web application code runs. It processes dynamic requests from the web server and generates dynamic content (such as personalized pages or data-driven charts). Separating the web server and application server allows for better scalability and performance.
+
+- Database server: The database server stores the data that your web application needs to function. It's where all your user data, content, and configurations are stored. Separating the database from the web and application servers ensures better security and scalability, as well as performance.
+
+In summary, this infrastructure with a server, load balancer (HAproxy), web server, application server, and database server provides better scalability, reliability, availability, and security, resulting in a more stable and efficient web application.
