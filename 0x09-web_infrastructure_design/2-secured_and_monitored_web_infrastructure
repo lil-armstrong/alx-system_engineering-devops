@@ -1,0 +1,89 @@
+I added the SSL certification to ensure that communication between the client and server only happens via secured HTTPS connection.
+
+I added three firewalls to each server. This is an extra layer of security to protect the server from external intrusion. I can configure each firewall independently to allow or drop HTTP packets.
+
+Additionally, I added three independent monitoring services. There are several monitoring tools available such as Nagios, Zabbix, Prometheus, etc. This will enable me to detect when there's a fault in any of the servers, therefore enabling me to better respond to any
+disaster in time.
+
+## Firewalls:
+    Firewalls are security measures that aim at deploying best practices and   technologies to prevent external intrusion. Generally, firewalls protect from external intrusion, but nowadays we see Big Enterprises also deploying firewall to protect their internal resources as well. Usually, firewalls can be implemented in two variants: software and hardware.
+
+## Why is the traffic served over HTTP:
+    Serving the traffic over SSL, ensures the data source integrity and     reliability. Without HTTPS, the HTTP connection is susceptible to several cyber attacks such as Man-In-The-Middle attack.
+
+## What monitoring is used for
+    Monitoring tools enable one to monitor the servers. The servers are pinged within a predefined interval to get information about the status of the server, whether it is online or offline. Today, some monitoring services have other advanced features that allow them to give more extensive reports about the monitored servers.
+
+## How the monitoring tool is collecting data
+    There are various web server monitoring tools available, and each tool may use different methods for collecting data. However, in general, web server monitoring tools collect data through one or more of the following methods:
+
+    1. Server Logs: Web servers keep track of various events in server logs, such as HTTP requests, server errors, and server activity. Monitoring tools can collect and analyze these logs to provide insights into the performance and availability of the web server.
+
+    2. Agent-Based Monitoring: Some monitoring tools may require the installation of an agent or plugin on the web server. The agent collects and sends data to the monitoring tool, which then analyzes the data and provides insights into the web server's performance.
+
+    3. Synthetic Transactions: Monitoring tools can simulate user traffic by sending synthetic transactions to the web server. The tool then measures the response time and availability of the server based on these simulated requests.
+
+    4. Real User Monitoring (RUM): RUM is a method of monitoring that collects data from actual user interactions with the web server. The monitoring tool collects data from the user's browser, such as page load times and errors, and provides insights into the user experience.
+
+    5. API-Based Monitoring: Some monitoring tools may use APIs provided by the web server to collect data. For example, the tool may use the server's API to collect data on server performance metrics such as CPU usage and memory usage.
+
+## Explain what to do if you want to monitor your web server QPS
+
+    Queries per second (QPS) is a measure of the rate of traffic going through a particular server in relation to a network that serves a Web domain. This measurement is important in assessing how support infrastructures
+    handle changing amounts of Web traffic and whether systems are scalable
+    enough to serve the changing needs of its user.
+
+    If you want to monitor your web server QPS (queries per second), you can follow these steps:
+
+    1. Identify a monitoring tool: Choose a monitoring tool that can help you track the QPS of your web server. Some of these tools may require installing agents on your web server, while others may use APIs or plugins.
+
+    2. Configure the monitoring tool: Once you have identified a monitoring tool, configure it to monitor the QPS of your web server. This may involve setting up monitoring checks or configuring the tool to collect metrics from the web server.
+
+    3. Monitor and analyze QPS: After the monitoring tool is configured, monitor and analyze the QPS of your web server. The monitoring tool should provide real-time data on the number of queries processed by the web server in a given time period. Use this data to identify trends and anomalies in the QPS of your web server.
+
+    4. Set alerts: Based on the QPS data, set up alerts to notify you when the QPS goes above or below a certain threshold. This can help you detect potential issues or outages and take corrective action.
+
+    5. Optimize web server performance: Based on the QPS data, identify areas where your web server performance can be improved. This may involve optimizing code, upgrading hardware, or adjusting server configurations.
+
+# ISSUES
+    Terminating SSL (Secure Sockets Layer) at the load balancer level can be an issue for a few reasons:
+
+    - Reduced security: When SSL termination is done at the load balancer, the traffic between the client and the load balancer is secure, but the traffic between the load balancer and the application servers is not. This means that if there is a vulnerability or an attacker gains access to the load balancer, they may be able to intercept or manipulate traffic to and from the application servers.
+
+    - Increased complexity: SSL termination requires additional processing power and can add complexity to the load balancer configuration. If the load balancer is not configured properly, it can introduce additional points of failure and reduce the overall availability of the system.
+
+    - Lack of end-to-end encryption: SSL termination at the load balancer means that the traffic between the load balancer and the application servers is not encrypted. This can be a concern if sensitive information is being transmitted between the load balancer and the application servers.
+
+    Overall, terminating SSL at the load balancer level can introduce security risks and complexity to the system. However, in some cases, it may be necessary for performance reasons. If SSL termination is done at the load balancer, it is important to take steps to mitigate the risks and ensure that the system is properly configured and secured.
+
+    The best place to terminate SSL (Secure Sockets Layer) depends on the specific requirements and constraints of your system. However, a common and recommended approach is to terminate SSL at the application server level.
+
+    Terminating SSL at the application server level provides several benefits:
+
+    - End-to-end encryption: SSL is terminated at the application server, which means that traffic is encrypted between the client and the application server. This provides end-to-end encryption and helps ensure that sensitive information is not intercepted or manipulated in transit.
+
+    - Security: By terminating SSL at the application server, the traffic between the application server and the load balancer is encrypted. This helps prevent potential attacks or data breaches, such as man-in-the-middle attacks.
+
+    - Flexibility: Terminating SSL at the application server provides flexibility in terms of choosing different SSL certificates for different applications and configuring SSL settings as per application requirements.
+
+    - Simplified load balancing: By terminating SSL at the application server, the load balancer can simply distribute traffic between the application servers without needing to handle SSL encryption/decryption.
+
+    Overall, terminating SSL at the application server provides end-to-end encryption, security, flexibility, and simplified load balancing. However, it may require additional resources on the application server to handle the SSL encryption/decryption, and it may be more complex to manage SSL certificates across multiple application servers.
+
+## Why having only one MySQL server capable of accepting writes is an issue
+    Having only one MySQL server capable of accepting writes is an issue because it creates a single point of failure and can lead to data loss or service interruptions if that server fails.
+
+    Having only one MySQL server capable of accepting writes can be an issue for several reasons:
+
+    - Single point of failure: If the server goes down, there is no other server that can accept writes, and the entire system will become unavailable. This can lead to significant downtime and loss of data.
+
+    - Scalability: As the workload increases, the single server can become a bottleneck, and performance can degrade. Scaling a single MySQL server can be challenging and may require significant effort.
+
+    - Data redundancy: With only one server capable of accepting writes, there is no redundancy in the system. If the server fails or experiences data corruption, there may be no backup available to restore the system.
+
+    - High availability: Having only one server capable of accepting writes can lead to reduced availability. If the server needs to be taken down for maintenance, there is no other server that can take over, and the system will become unavailable.
+
+    To address these issues, it is common to use a MySQL cluster or replication, which provides redundancy, scalability, and high availability. A cluster or replication setup involves multiple servers, each capable of accepting writes, which work together to ensure data consistency and availability.
+
+## Why having servers with all the same components (database, web server and application server) might be a problem
+    Servers with all the same components can be a problem because they can create a single point of failure, resource imbalances, limit scalability, and limit flexibility.
