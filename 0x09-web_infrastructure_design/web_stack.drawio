@@ -1,0 +1,213 @@
+<mxfile host="app.diagrams.net" modified="2023-03-30T07:03:43.214Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="dOjSlwPVRZYfnaPbKeTn" compressed="true" version="21.1.1" type="github" pages="2">
+  <diagram name="simple_web_stack" id="Zk0t-JC8fuV6y8V5xoAU">
+    <mxGraphModel dx="880" dy="1581" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-78" value="Information" style="swimlane;whiteSpace=wrap;html=1;autosize=1;resizeWidth=0;resizeHeight=1;" parent="1" vertex="1">
+          <mxGeometry x="938" y="-84" width="784" height="708" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-79" value="&lt;h1&gt;Server&lt;/h1&gt;&lt;p&gt;A server is a physical or virtual machine whose sole purpose is to provide services to other machines, known as clients, usually over a network&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="20" y="37" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-80" value="&lt;h1&gt;Domain name&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The domain name is simply a human-friendly alias for an machine&#39;s 32-bit IP address. For example: www.foobar.com can be the domain name for the IP address: 8.8.8.8&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="258" y="37" width="245" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-81" value="&lt;h1&gt;DNS record&lt;br&gt;&lt;/h1&gt;In the scenario we are depicting, the DNS record of www.foobar.com is a CNAME DVS record. www is a subdomain of the domain name foobar.com" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="20" y="175" width="179" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-82" value="&lt;h1&gt;Role of web server&lt;br&gt;&lt;/h1&gt;The main role of a web server is to serve web pages over the HTTP protocol to the clients" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="260" y="175" width="242" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-83" value="&lt;h1&gt;DNS record&lt;br&gt;&lt;/h1&gt;In the scenario we are depicting, the DNS record of www.foobar.com is a CNAME DVS record. www is a subdomain of the domain name foobar.com" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="7" y="416" width="179" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-84" value="&lt;h1&gt;Role of application server&lt;br&gt;&lt;/h1&gt;The main role of a application server is to serve handle complex server side business logic and access to the database, providing the appropriate services" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="249" y="416" width="231" height="158" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-85" value="&lt;h1&gt;Role of database&lt;br&gt;&lt;/h1&gt;The main role of a database is persistence and organization of data in the server" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="537" y="37" width="231" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-86" value="&lt;h1&gt;What the server uses to communicate with the client&lt;br&gt;&lt;/h1&gt;Since the schematic diagram depicts a web interaction between the client and the server, the server uses the HTTP network protocol to communicate with the client" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="537" y="175" width="231" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-87" value="&lt;h1&gt;ISSUES&lt;br&gt;&lt;/h1&gt;&lt;div&gt;- This setup has a single point of failure problem. If the web server were to have any problems, the whole communication between the client will be interrupted.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- The downtime could range from hours to days whenever a maintenance operation is performed on the server. This also will interrupt the client&#39;s communication with the service&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Cannot scale if the traffic increases over time. This system is susceptible to attacks such as DDos attack and can only handle a limited number of request at any point in time&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;autosize=1;resizeHeight=1;fixedWidth=1;" parent="9bGchT1JOsIv0tG_WcHA-78" vertex="1">
+          <mxGeometry x="517" y="416" width="231" height="287" as="geometry" />
+        </mxCell>
+        <mxCell id="EEC7-VKyUUsiegIS-rsR-1" value="" style="swimlane;startSize=0;autosize=1;resizeWidth=1;resizeHeight=1;" parent="1" vertex="1">
+          <mxGeometry x="101" y="-103" width="731" height="863" as="geometry" />
+        </mxCell>
+        <mxCell id="EEC7-VKyUUsiegIS-rsR-2" value="" style="group" parent="EEC7-VKyUUsiegIS-rsR-1" vertex="1" connectable="0">
+          <mxGeometry x="66" y="66" width="619" height="703" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-8" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=70;entryDy=80;entryPerimeter=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" parent="EEC7-VKyUUsiegIS-rsR-2" source="9bGchT1JOsIv0tG_WcHA-58" target="pszhSUHn8kJoGB2AZ1gZ-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y45E9UaRlxgGRHAY_6zK-2" value="HTTP Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="pszhSUHn8kJoGB2AZ1gZ-8" vertex="1" connectable="0">
+          <mxGeometry x="-0.5066" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-58" value="Router" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=hatch;" parent="EEC7-VKyUUsiegIS-rsR-2" vertex="1">
+          <mxGeometry x="240" y="455" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-75" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="EEC7-VKyUUsiegIS-rsR-2" source="9bGchT1JOsIv0tG_WcHA-59" target="9bGchT1JOsIv0tG_WcHA-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-59" value="DNS" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=hatch;" parent="EEC7-VKyUUsiegIS-rsR-2" vertex="1">
+          <mxGeometry x="8" y="530" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-76" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="EEC7-VKyUUsiegIS-rsR-2" source="9bGchT1JOsIv0tG_WcHA-63" target="9bGchT1JOsIv0tG_WcHA-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y45E9UaRlxgGRHAY_6zK-1" value="HTTP/S" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;fontColor=default;" parent="9bGchT1JOsIv0tG_WcHA-76" vertex="1" connectable="0">
+          <mxGeometry x="0.3423" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9bGchT1JOsIv0tG_WcHA-63" value="CLIENT" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=solid;" parent="EEC7-VKyUUsiegIS-rsR-2" vertex="1">
+          <mxGeometry x="401" y="623" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EEC7-VKyUUsiegIS-rsR-4" value="www.foobar.com" style="rounded=1;whiteSpace=wrap;html=1;" parent="EEC7-VKyUUsiegIS-rsR-2" vertex="1">
+          <mxGeometry x="-36" y="593" width="167" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-1" value="Server 1" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" parent="EEC7-VKyUUsiegIS-rsR-2" vertex="1">
+          <mxGeometry x="26" y="-32" width="582" height="393" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-2" value="MYSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillStyle=solid;" parent="pszhSUHn8kJoGB2AZ1gZ-1" vertex="1">
+          <mxGeometry x="408" y="67" width="92" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-3" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" parent="pszhSUHn8kJoGB2AZ1gZ-1" source="pszhSUHn8kJoGB2AZ1gZ-4" target="pszhSUHn8kJoGB2AZ1gZ-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-4" value="&lt;div&gt;Application server&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(Django)&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=default;fillStyle=hatch;" parent="pszhSUHn8kJoGB2AZ1gZ-1" vertex="1">
+          <mxGeometry x="153" y="120" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-5" value="Codebase" style="shape=card;whiteSpace=wrap;html=1;fillStyle=auto;" parent="pszhSUHn8kJoGB2AZ1gZ-1" vertex="1">
+          <mxGeometry x="80" y="76" width="85" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-6" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" parent="pszhSUHn8kJoGB2AZ1gZ-1" source="pszhSUHn8kJoGB2AZ1gZ-7" target="pszhSUHn8kJoGB2AZ1gZ-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pszhSUHn8kJoGB2AZ1gZ-7" value="&lt;div&gt;Web server&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(Nginx)&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillStyle=hatch;" parent="pszhSUHn8kJoGB2AZ1gZ-1" vertex="1">
+          <mxGeometry x="255" y="274" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3BLzwUbsLuuSNuG4D8NY" name="1-distributed_web_infrastructure">
+    <mxGraphModel dx="2610" dy="2062" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LgCvZeOGAzv5XyGxU_UT-30" value="Server " style="swimlane;horizontal=0;whiteSpace=wrap;html=1;rounded=1;autosize=1;rotatable=0;startSize=40;" vertex="1" parent="1">
+          <mxGeometry x="-543" y="-555" width="1566" height="839" as="geometry" />
+        </mxCell>
+        <mxCell id="LgCvZeOGAzv5XyGxU_UT-43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=70;entryDy=80;entryPerimeter=0;startArrow=classic;startFill=1;dashed=1;strokeWidth=2;" edge="1" parent="LgCvZeOGAzv5XyGxU_UT-30" source="LgCvZeOGAzv5XyGxU_UT-41" target="Qo4drJKKF6jJ4xhuQ-Ev-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1268.0476190476188" y="477" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-41" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=70;entryDy=80;entryPerimeter=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;strokeWidth=2;" edge="1" parent="LgCvZeOGAzv5XyGxU_UT-30" source="LgCvZeOGAzv5XyGxU_UT-41" target="Qo4drJKKF6jJ4xhuQ-Ev-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LgCvZeOGAzv5XyGxU_UT-41" value="Load balancer" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="LgCvZeOGAzv5XyGxU_UT-30">
+          <mxGeometry x="745" y="651" width="200" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-2" value="HAProxy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="LgCvZeOGAzv5XyGxU_UT-41">
+          <mxGeometry x="58.5" y="57" width="61" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-4" value="Secondary Server (Inactive)" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="LgCvZeOGAzv5XyGxU_UT-30">
+          <mxGeometry x="902" y="97" width="582" height="393" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-12" value="MYSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4">
+          <mxGeometry x="408" y="67" width="92" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-33" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" edge="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4" source="Qo4drJKKF6jJ4xhuQ-Ev-29" target="Qo4drJKKF6jJ4xhuQ-Ev-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-29" value="&lt;div&gt;Application server&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4">
+          <mxGeometry x="153" y="120" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-30" value="Codebase" style="shape=card;whiteSpace=wrap;html=1;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4">
+          <mxGeometry x="80" y="76" width="85" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-32" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" edge="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4" source="Qo4drJKKF6jJ4xhuQ-Ev-31" target="Qo4drJKKF6jJ4xhuQ-Ev-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-31" value="&lt;div&gt;Web server&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-4">
+          <mxGeometry x="255" y="274" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-34" value="Primary Server (Active)" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;startSize=23;" vertex="1" parent="LgCvZeOGAzv5XyGxU_UT-30">
+          <mxGeometry x="106" y="83" width="582" height="393" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-35" value="MYSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillStyle=solid;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34">
+          <mxGeometry x="408" y="67" width="92" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-36" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" edge="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34" source="Qo4drJKKF6jJ4xhuQ-Ev-37" target="Qo4drJKKF6jJ4xhuQ-Ev-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-37" value="&lt;div&gt;Application server&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34">
+          <mxGeometry x="153" y="120" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-38" value="Codebase" style="shape=card;whiteSpace=wrap;html=1;fillStyle=solid;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34">
+          <mxGeometry x="80" y="76" width="85" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-39" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;startArrow=classic;startFill=1;" edge="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34" source="Qo4drJKKF6jJ4xhuQ-Ev-40" target="Qo4drJKKF6jJ4xhuQ-Ev-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-40" value="&lt;div&gt;Web server&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillStyle=hatch;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-34">
+          <mxGeometry x="255" y="274" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-4" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="wYdQzl1c6dJECem2Cj0M-1" target="LgCvZeOGAzv5XyGxU_UT-41">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="398" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oEWqPdd-cIU6blDZEb1k-2" value="HTTP Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="wYdQzl1c6dJECem2Cj0M-4">
+          <mxGeometry x="-0.2279" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-1" value="Router" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=hatch;" vertex="1" parent="1">
+          <mxGeometry x="262" y="517" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-7" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="wYdQzl1c6dJECem2Cj0M-2" target="wYdQzl1c6dJECem2Cj0M-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="53" y="557" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oEWqPdd-cIU6blDZEb1k-1" value="DNS lookup" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="wYdQzl1c6dJECem2Cj0M-7">
+          <mxGeometry x="0.1737" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-2" value="DNS" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillStyle=hatch;" vertex="1" parent="1">
+          <mxGeometry x="13" y="681" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-6" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;endArrow=classic;" edge="1" parent="1" source="wYdQzl1c6dJECem2Cj0M-3" target="wYdQzl1c6dJECem2Cj0M-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vxOTQO6jhj09wczFw2kP-1" value="HTTP/S" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" connectable="0" parent="wYdQzl1c6dJECem2Cj0M-6">
+          <mxGeometry x="0.0903" y="-1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYdQzl1c6dJECem2Cj0M-3" value="CLIENT" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="406" y="774" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-1" value="www.foobar.com" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-30.5" y="746" width="167" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-3" value="Information" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="-543" width="710" height="1144" as="geometry" />
+        </mxCell>
+        <mxCell id="Qo4drJKKF6jJ4xhuQ-Ev-26" value="&lt;div&gt;In this schema diagram, I added two servers, each with a database (MYSQL),&amp;nbsp; web server (Nginx), application server (Django) with a code base. I added a load balancer (HAproxy) to programmatically distribute the network traffic between the servers in a manner that ensures an optimal distribution of work load on each server at a point in time. I have setup a Active-passive load balancing strategy.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;For a start, in this simple setup, I am deploying the predictive scheduling strategy for the load balancer. This is because, I am deploying a database cluster, where one of the server is a primary or master and the other is a replicate set of the database. The second server (secondary) is a slave that serves as a fail-safe server for the primary server. Should there be an issues with the primary server, using the predictive load balancing strategy, the load will be directed to the secondary server&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;In this setup, there are no firewall and no SSL certificates to protect the client. So this setup is susceptible to attacks such as man-in-the-middle attack. Also since there&#39;s no monitoring, if something were to happen to any of the servers, since we are deploying the predictive load balancing strategy, the load balancer will redirect traffic to the other server, but it will be difficult for us to know when this happens unless the server is checked.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;An advantage of this setup is that there is an improvement made in handling the single point of failure problem. This is true for the server using the load balancer and also for the database, which is a cluster. The cluster is a Master-slave setup, hence the secondary database hold redundant data and keeps in sync with the primary database, acting as a fail-safe should any issue occur&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="Qo4drJKKF6jJ4xhuQ-Ev-3">
+          <mxGeometry x="54" y="94" width="526" height="402" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
