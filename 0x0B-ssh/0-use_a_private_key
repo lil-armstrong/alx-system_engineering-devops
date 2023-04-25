@@ -8,4 +8,4 @@ SERVER_USER=ubuntu
 PRIVATE_KEY_FILE="$HOME/.ssh/school"
 
 # Using ssh to connect to server
-ssh -i "$PRIVATE_KEY_FILE" "$SERVER_USER@$SERVER_ADDRESS"
+ssh -i "$PRIVATE_KEY_FILE" "$SERVER_USER"@"$SERVER_ADDRESS"
