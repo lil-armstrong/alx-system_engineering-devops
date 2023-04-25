@@ -1,4 +1,4 @@
-
+# Install a package using Puppet exec and package resource
   package { 'python3-pip':
     ensure => installed
   }

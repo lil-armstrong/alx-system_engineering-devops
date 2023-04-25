@@ -1,3 +1,5 @@
+# Create a file using the Puppet fiel resource
+
 file {'/tmp/school':
   ensure  => present,
   owner   => 'www-data',
