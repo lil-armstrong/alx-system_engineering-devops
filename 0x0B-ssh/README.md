@@ -16,4 +16,5 @@
 	- Number of bits in the created key should be `4096`
 	- The created key must be protected by the passphrase `betty`
 
-## 
+## 2. Client configutation file
+
