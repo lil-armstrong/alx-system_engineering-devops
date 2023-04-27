@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 # Transfers a file from Holberton's client to another.
 # Accepts four arguments:
