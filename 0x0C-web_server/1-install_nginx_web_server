@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
 # installs nginx and configures it on a remote server
 
-apt update -y
-apt install nginx -y
-ufw allow 'Nginx HTTP'
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-service nginx start
+# Install nginx
+apt-get update
+apt-get install -y nginx
+
+# Configure nginx to listen on port 80
+sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+# Restart nginx
+kill $(cat /var/run/nginx.pid)
+/usr/sbin/nginx
+
+# Create index.html file with 'Hello World!' message
+echo "<html><body><h1>Hello World!</h1></body></html>" >/var/www/html/index.html
+
+# Test nginx by querying it with a GET request to the root directory
+if curl -s http://localhost | grep -q "Hello World!"; then
+	echo "Nginx is working properly!"
+else
+	echo "Nginx is not working as expected."
+fi
