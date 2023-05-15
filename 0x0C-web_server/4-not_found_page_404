@@ -16,19 +16,7 @@ server {
 
     location = /404.html {
         internal;
-    }
-
-    location / {
-        # First attempt to serve request as file
-        try_files \$uri \$uri/ =404;
-
-        # If that fails, display 404 error page
-        error_page 404 /404.html;
-        error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-            internal;
-        }
-    }
+    }    
 }
 EOF
 
