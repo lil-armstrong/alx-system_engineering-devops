@@ -1,26 +1,52 @@
 #!/usr/bin/env bash
-# sets up a new 404 error page
-sudo apt-get update
-sudo apt-get install -y nginx 
-echo "Hello World!" > index.html
-sudo mv index.html /var/www/html
 
+NGINX_CONFIG_FILE="/etc/nginx/sites-available/default2"
+WWW_DIR="/var/www"
+REDIRECT_LOCATION="/404.html"
 
-echo "Ceci n'est pas une page" > 404.html
-sudo mv 404.html /var/www/html
-echo "server {
-   listen 80 default_server;
-   listen [::]:80 default_server;
-   
-   root /var/www/html;
-   index index.html;
-   location /redirect_me {
-      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-   }
-   error_page 404 /404.html;
-   location = /404.html{
-      internal;
-   }
-}" > default
-sudo mv -f default /etc/nginx/sites-available/default
-sudo service nginx restart
+# Define the server block as a variable
+read -r -d '' SERVER_BLOCK <<EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    server_name _;
+
+    error_page 404 /404.html;
+
+    location = /404.html {
+        internal;
+    }
+
+    location / {
+        # First attempt to serve request as file
+        try_files \$uri \$uri/ =404;
+
+        # If that fails, display 404 error page
+        error_page 404 /404.html;
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+            internal;
+        }
+    }
+}
+EOF
+
+# Install nginx if it's not already installed
+if ! command -v nginx &>/dev/null; then
+   apt-get update
+   apt-get install -y nginx
+fi
+
+# Create the web root directory and set its permissions
+mkdir -p "$WWW_DIR/html"
+chmod -R 755 "$WWW_DIR"
+
+# Create the custom 404 error page
+echo "Ceci n'est pas une page" >"$WWW_DIR/404.html"
+
+# Create the new nginx configuration file
+echo "$SERVER_BLOCK" >"$NGINX_CONFIG_FILE"
+
+# Test the new nginx configuration and reload nginx if there are no errors
+nginx -t && systemctl reload nginx
