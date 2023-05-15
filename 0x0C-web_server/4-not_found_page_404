@@ -3,7 +3,6 @@
 
 NGINX_CONFIG_FILE="/etc/nginx/sites-available/default"
 WWW_DIR="/var/www"
-REDIRECT_LOCATION="/404.html"
 
 # Define the server block as a variable
 read -r -d '' SERVER_BLOCK <<EOF
