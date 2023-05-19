@@ -8,17 +8,20 @@ TARGET_URL="https://sketchfab.com/bluepeno/models"
 # Define the path to the nginx configuration file
 NGINX_CONFIG_FILE="/etc/nginx/sites-available/default"
 
-apt-get update && apt-get install -y nginx
-sed -i 's/listen\s*80;/listen 80 default_server;/g' $NGINX_CONFIG_FILE
+# Install nginx if it's not already installed
+if ! command -v nginx &>/dev/null; then
+	apt-get update
+	apt-get install -y nginx
+fi
 
-mkdir -p /var/www/html/
-sudo chmod -R 755 /var/www
+mkdir -p /var/www/html
+chmod -R 755 /var/www
 
 if grep -q "$REDIRECT_LOCATION" "$NGINX_CONFIG_FILE"; then
 	echo "Redirect location already exists in nginx config file."
 else
 	# Add the redirect location to the config file
-	sed -i "/^\s*server_name\s*_;/a \\\n\tlocation $REDIRECT_LOCATION {\n\t\treturn 301 $TARGET_URL;\n\t}\n" "$NGINX_CONFIG_FILE"
+	sed -i "/^\s*server_name\s*_;/a \\\n    location $REDIRECT_LOCATION {\n\t\treturn 301 $TARGET_URL;\n    }\n" "$NGINX_CONFIG_FILE"
 
 	# Test the config file and reload nginx if there are no errors
 fi
