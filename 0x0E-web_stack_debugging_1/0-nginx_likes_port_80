@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Kill all processes that are using port 90
+sudo kill $(sudo lsof -t -i :80)
+sudo nginx -t && sudo systemctl restart nginx
