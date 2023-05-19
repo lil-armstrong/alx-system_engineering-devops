@@ -5,6 +5,7 @@
 # sudo kill $(sudo lsof -t -i :80)
 # sudo nginx -t && sudo systemctl restart nginx
 
+kill "$(pgrep 'nginx' | head -1)"
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
