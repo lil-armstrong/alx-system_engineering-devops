@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+# Configures a load balancer in lb-01 server
+
+# Install nginx if it's not already installed
+if ! command -v nginx &>/dev/null; then
+	apt update -y && apt install haproxy -y
+fi
+
+INIT_FILE="/etc/init.d/haproxy"
+INIT_CONFIG=$(
+	cat <<EOF
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          haproxy
+# Required-Start:    $local_fs $network $syslog
+# Required-Stop:     $local_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: HAProxy
+# Description:       HAProxy is a fast and reliable load balancing reverse proxy.
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DAEMON=/usr/sbin/haproxy
+NAME=haproxy
+DESC=HAProxy
+CONFIG="/etc/haproxy/haproxy.cfg"
+PIDFILE="/run/haproxy.pid"
+
+test -x $DAEMON || exit 0
+
+. /lib/init/vars.sh
+. /lib/lsb/init-functions
+
+do_start() {
+    $DAEMON -f "$CONFIG" -D -p "$PIDFILE"
+}
+
+do_stop() {
+    $DAEMON -f "$CONFIG" -D -sf $(cat "$PIDFILE")
+}
+
+case "$1" in
+    start)
+        log_daemon_msg "Starting $DESC" "$NAME"
+        do_start
+        case "$?" in
+            0|1) log_end_msg 0 ;;
+            *) log_end_msg 1 ;;
+        esac
+        ;;
+    stop)
+        log_daemon_msg "Stopping $DESC" "$NAME"
+        do_stop
+        case "$?" in
+            0|1) log_end_msg 0 ;;
+            *) log_end_msg 1 ;;
+        esac
+        ;;
+    restart|force-reload)
+        log_daemon_msg "Restarting $DESC" "$NAME"
+        do_stop
+        sleep 1
+        do_start
+        case "$?" in
+            0) log_end_msg 0 ;;
+            1) log_end_msg 1 ;;  # Old process is still running
+            *) log_end_msg 1 ;;  # Failed to start
+        esac
+        ;;
+    *)
+        echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+        exit 3
+        ;;
+esac
+
+exit 0
+EOF
+)
+CONFIG_FILE="/etc/haproxy/haproxy.cfg"
+CONFIG=$(
+	cat <<EOF
+frontend http-in
+  bind *:80
+  default_backend servers
+
+backend servers
+  server web-01 54.162.3.27:80 check
+  server web-02 18.235.255.8:80 check
+
+EOF
+)
+echo "$CONFIG" | tee "$CONFIG_FILE" >/dev/null
+
+# Create haproxy init script
+echo "$INIT_CONFIG" | tee "$INIT_FILE" >/dev/null
+
+# Make the init script executable
+chmod +x /etc/init.d/haproxy
+
+# Enable the init file to start on boot
+update-rc.d haproxy defaults
+
+nginx -t && systemctl restart haproxy
