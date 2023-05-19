@@ -5,6 +5,8 @@
 if ! command -v nginx &>/dev/null; then
 	apt update -y && apt install nginx -y
 fi
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
 
 CUSTOM_CONFIG=$(
 	cat <<EOF
