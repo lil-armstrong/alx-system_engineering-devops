@@ -8,13 +8,21 @@ fi
 
 CUSTOM_CONFIG=$(
 	cat <<EOF
-server {
-	listen 80;
-	server_name _;
 	add_header X-Served-By \$hostname;
-}
 EOF
 )
+CUSTOM_HEADER_FILE="/etc/nginx/conf.d/custom_header.conf"
+DEFAULT_CONFIG_FILE="/etc/nginx/sites-available/default"
 
-echo "$CUSTOM_CONFIG" | tee /etc/nginx/conf.d/custom_header.conf >/dev/null
+echo "$CUSTOM_CONFIG" | tee "$CUSTOM_HEADER_FILE" >/dev/null
+
+if [ -f "$DEFAULT_CONFIG_FILE" ]; then
+	# Make backup
+	cp "$DEFAULT_CONFIG_FILE" "$DEFAULT_CONFIG_FILE.bck"
+	if grep -q "$CUSTOM_HEADER_FILE" "$DEFAULT_CONFIG_FILE"; then
+		echo "Config already exist"
+	else
+		sed -i "/^\s*server_name\s*_;/a \\\n\tinclude $CUSTOM_HEADER_FILE;" "$DEFAULT_CONFIG_FILE"
+	fi
+fi
 nginx -t && systemctl restart nginx
