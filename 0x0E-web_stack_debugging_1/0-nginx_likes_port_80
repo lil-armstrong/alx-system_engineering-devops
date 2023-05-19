@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# Configures an Nginx server to listen on port 80.
+
 # Kill all processes that are using port 90
-sudo kill $(sudo lsof -t -i :80)
-sudo nginx -t && sudo systemctl restart nginx
+# sudo kill $(sudo lsof -t -i :80)
+# sudo nginx -t && sudo systemctl restart nginx
+
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
