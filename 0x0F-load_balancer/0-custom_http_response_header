@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Configures nginx server with custom header
+
+# Install nginx if it's not already installed
+if ! command -v nginx &>/dev/null; then
+	apt update -y && apt install nginx -y
+fi
+
+CUSTOM_CONFIG=$(
+	cat <<EOF
+server {
+	listen 80 default_server;
+	listen [::]:80 default-server;
+	server_name localhost;
+	add_header X-Served-By \$hostname;
+}
+EOF
+)
+
+echo "$CUSTOM_CONFIG" | tee /etc/nginx/conf.d/custom_header.conf >/dev/null
+nginx -t && systemctl restart nginx
