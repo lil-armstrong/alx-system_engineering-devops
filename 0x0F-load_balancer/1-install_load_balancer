@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # Configures a load balancer in lb-01 server
 
-# Install nginx if it's not already installed
-if ! command -v nginx &>/dev/null; then
-	apt update -y && apt install haproxy -y
+# Install haproxy if it's not already installed
+if ! command -v haproxy &>/dev/null; then
+	apt update -y && apt install -y haproxy
 fi
 
 INIT_FILE="/etc/init.d/haproxy"
-INIT_CONFIG=$(
-	cat <<EOF
-#!/bin/sh
+INIT_CONFIG='''#!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          haproxy
 # Required-Start:    $local_fs $network $syslog
@@ -25,7 +23,7 @@ DAEMON=/usr/sbin/haproxy
 NAME=haproxy
 DESC=HAProxy
 CONFIG="/etc/haproxy/haproxy.cfg"
-PIDFILE="/run/haproxy.pid"
+PIDFILE="/var/run/haproxy.pid"
 
 test -x $DAEMON || exit 0
 
@@ -69,36 +67,35 @@ case "$1" in
         esac
         ;;
     *)
-        echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+        echo "Usage: \$SCRIPTNAME {start|stop|restart|force-reload}" >&2
         exit 3
         ;;
 esac
 
 exit 0
-EOF
-)
+'''
+
 CONFIG_FILE="/etc/haproxy/haproxy.cfg"
-CONFIG=$(
-	cat <<EOF
-frontend http-in
+CONFIG='''frontend http-in
   bind *:80
   default_backend servers
 
 backend servers
   server web-01 54.162.3.27:80 check
   server web-02 18.235.255.8:80 check
-
-EOF
-)
-echo "$CONFIG" | tee "$CONFIG_FILE" >/dev/null
+'''
 
 # Create haproxy init script
-echo "$INIT_CONFIG" | tee "$INIT_FILE" >/dev/null
+echo "$INIT_CONFIG" | sudo tee "$INIT_FILE" >/dev/null
 
 # Make the init script executable
-chmod +x /etc/init.d/haproxy
+sudo chmod +x "$INIT_FILE"
 
-# Enable the init file to start on boot
-update-rc.d haproxy defaults
+# Enable the init script to start on boot
+sudo update-rc.d haproxy defaults
 
-nginx -t && systemctl restart haproxy
+# Create the haproxy config file
+echo "$CONFIG" | sudo tee "$CONFIG_FILE" >/dev/null
+
+# Restart haproxy service
+sudo service haproxy restart
