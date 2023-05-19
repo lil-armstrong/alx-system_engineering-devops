@@ -14,7 +14,7 @@ server {
 
     error_page 404 /404.html;
 
-    location = /404.html {
+    location /404 {
         internal;
     }    
 }
@@ -22,8 +22,8 @@ EOF
 
 # Install nginx if it's not already installed
 if ! command -v nginx &>/dev/null; then
-   apt-get update
-   apt-get install -y nginx
+    apt-get update
+    apt-get install -y nginx
 fi
 
 # Create the web root directory and set its permissions
@@ -31,7 +31,7 @@ mkdir -p "$WWW_DIR/html"
 chmod -R 755 "$WWW_DIR"
 
 # Create the custom 404 error page
-echo "Ceci n'est pas une page" >"$WWW_DIR/404.html"
+echo "Ceci n'est pas une page" >"$WWW_DIR/html/404.html"
 
 # Create the new nginx configuration file
 echo "$SERVER_BLOCK" >"$NGINX_CONFIG_FILE"
