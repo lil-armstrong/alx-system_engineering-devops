@@ -9,8 +9,7 @@ fi
 CUSTOM_CONFIG=$(
 	cat <<EOF
 server {
-	listen 80 default_server;
-	listen [::]:80 default-server;
+	listen 80;
 	server_name localhost;
 	add_header X-Served-By \$hostname;
 }
