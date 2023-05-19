@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
+# Configures an Nginx server to listen on port 80.
 
-# Install net-tools package for netstat command
-sudo apt-get update
-sudo apt-get install net-tools -y
+# Kill all processes that are using port 90
+# sudo kill $(sudo lsof -t -i :80)
+# sudo nginx -t && sudo systemctl restart nginx
 
-# Check if anything is already listening on port 80
-existing_pid=$(sudo netstat -tuln | grep :80 | awk '{print $7}' | awk -F '/' '{print $1}')
-
-if [[ -n "$existing_pid" ]]; then
-	echo "A process with PID $existing_pid is already listening on port 80."
-	echo "Please stop or terminate that process before configuring Nginx."
-	exit 1
-fi
-
-# Update Nginx configuration to listen on port 80
-sudo sed -i 's/listen\s*\(.*\);/listen 80;/g' /etc/nginx/nginx.conf
-
-# Restart Nginx service
-sudo systemctl restart nginx
-
-echo "Nginx has been configured to listen on port 80."
-
-exit 0
+kill "$(pgrep 'nginx' | head -1)"
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
