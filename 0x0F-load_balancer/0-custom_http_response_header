@@ -8,6 +8,9 @@ fi
 mkdir -p /var/www/html/
 sudo chmod -R 755 /var/www
 
+# Configure nginx to listen on port 80
+sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
 CUSTOM_CONFIG=$(
 	cat <<EOF
 	add_header X-Served-By \$hostname;
