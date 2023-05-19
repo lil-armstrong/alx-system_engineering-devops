@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
+# Shorter version
 apt-get -qq install net-tools
 ! netstat -tuln | grep -q ':80' && echo 'listen 80;' | tee -a /etc/nginx/nginx.conf >/dev/null && systemctl restart nginx
 service nginx status | grep -q 'not running' && systemctl start nginx
-
-exit 0
