@@ -17,6 +17,9 @@ fi
 mkdir -p /var/www/html
 chmod -R 755 /var/www
 
+# Configure nginx to listen on port 80
+sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
 if grep -q "$REDIRECT_LOCATION" "$NGINX_CONFIG_FILE"; then
 	echo "Redirect location already exists in nginx config file."
 else

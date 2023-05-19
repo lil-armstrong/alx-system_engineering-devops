@@ -28,6 +28,7 @@ server {
 EOF
 )
 REDIRECT_LOCATION="/404"
+
 # Install nginx if it's not already installed
 if ! command -v nginx &>/dev/null; then
     apt-get update
@@ -42,6 +43,8 @@ chmod -R 755 "$WWW_DIR"
 echo "Ceci n'est pas une page" >"$WWW_DIR/html/404.html"
 
 if [ -f "$NGINX_CONFIG_FILE" ]; then
+    # Configure nginx to listen on port 80
+    sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
     if [ ! -e "$NGINX_CONFIG_FILE.bck" ]; then
         # Make backup
         cp "$NGINX_CONFIG_FILE" "$NGINX_CONFIG_FILE.bck"
