@@ -27,7 +27,7 @@ server {
 }
 EOF
 )
-
+REDIRECT_LOCATION="/404"
 # Install nginx if it's not already installed
 if ! command -v nginx &>/dev/null; then
     apt-get update
@@ -48,8 +48,10 @@ if [ -f "$NGINX_CONFIG_FILE" ]; then
     fi
 fi
 
-# Create the new nginx configuration file
-echo "$SERVER_BLOCK" | tee "$NGINX_CONFIG_FILE" >/dev/null
-
+if grep -q "$REDIRECT_LOCATION" "$NGINX_CONFIG_FILE"; then
+    echo "Redirect location already exists in nginx config file."
+else
+    sed -i "/^\s*server_name\s*_;/a\\\n    error_page 404 /404.html;\n\n    location $REDIRECT_LOCATION {\n        internal;\n    }" "$NGINX_CONFIG_FILE"
+fi
 # Test the new nginx configuration and reload nginx if there are no errors
 nginx -t && systemctl reload nginx
