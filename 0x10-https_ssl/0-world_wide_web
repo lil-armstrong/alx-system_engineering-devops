@@ -12,14 +12,8 @@ get_subdomain_info() {
 	fi
 
 	for sub in "${subdomains[@]}"; do
-		info=$(dig +short $sub.$domain | awk '{ printf "%s ", $0 }')
-		if [ -z "$info" ]; then
-			echo "The subdomain $sub.$domain does not exist."
-		else
-			record_type=$(echo $info | awk '{ print $NF }')
-			destination=$(echo $info | awk '{ $NF=""; print $0 }')
-			echo "The subdomain $sub.$domain is a $record_type record and points to $destination"
-		fi
+		info=$(dig $sub.$domain | grep -m 1 "^$sub.$domain" | tr '\t' '\n' | tail -2)
+		echo -e "$sub.$domain\n$info" | tr '\n' ':' | awk -F: '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
 	done
 }
 
