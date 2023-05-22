@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Script retrieves domain and subdomain information
+
+get_subdomain_info() {
+	local domain=$1
+	local subdomain=$2
+
+	if [ -z "$subdomain" ]; then # If zero length
+		subdomains=("www" "lb-01" "web-01" "web-02")
+	else
+		subdomains=("$subdomain")
+	fi
+
+	for sub in "${subdomains[@]}"; do
+		info=$(dig +short $sub.$domain | awk '{ printf "%s ", $0 }')
+		if [ -z "$info" ]; then
+			echo "The subdomain $sub.$domain does not exist."
+		else
+			record_type=$(echo $info | awk '{ print $NF }')
+			destination=$(echo $info | awk '{ $NF=""; print $0 }')
+			echo "The subdomain $sub.$domain is a $record_type record and points to $destination"
+		fi
+	done
+}
+
+get_subdomain_info "$1" "$2"
