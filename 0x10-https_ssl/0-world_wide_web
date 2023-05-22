@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
-# Usage: ./1-world_wide_web <domain> <subdomain>
-# Display information about subdomains.
+# Script retrieves domain and subdomain information
 
-domain_information() {
-	line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
-	echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+get_subdomain_info() {
+	local domain=$1
+	local subdomain=$2
+
+	if [ -z "$subdomain" ]; then # If zero length
+		subdomains=("www" "lb-01" "web-01" "web-02")
+	else
+		subdomains=("$subdomain")
+	fi
+
+	for sub in "${subdomains[@]}"; do
+		info=$(dig $sub.$domain | grep "^$sub.$domain" | tr '\t' '\n' | tail -2)
+		echo -e "$sub\n$info" | tr '\n' ':' | awk -F: '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+	done
 }
 
-if [ "$#" == 1 ]; then
-	domain_information "$1" "www"
-	domain_information "$1" "lb-01"
-	domain_information "$1" "web-01"
-	domain_information "$1" "web-02"
-elif [ "$#" == 2 ]; then
-	domain_information "$1" "$2"
-fi
+get_subdomain_info "$1" "$2"
