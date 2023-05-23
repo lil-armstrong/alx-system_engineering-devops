@@ -1,6 +1,5 @@
 #!/bin/bash
 #Concise version
-adduser --system --no-create-home --disabled-login --group "nginx"
-sed -i "s/^user .*/user $username;/" /etc/nginx/nginx.conf
-sed -i "s/listen\s*80;/listen 8080;/g" /etc/nginx/nginx.conf
+if ! id -u nginx &>/dev/null; then useradd -r nginx; fi
+sed -i 's/^user .*/user nginx;/; s/listen\s*80;/listen 8080;/g' /etc/nginx/nginx.conf
 service nginx restart
