@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
-
-# Set the desired username
+# Config nginx to run as the nginx user listening on port 8080.
 
 username="nginx"
+
+if ! command -v haproxy &>/dev/null; then
+	apt update -y && apt install -y nginx
+fi
 
 # Check if the user already exists
 
 if id "$username" >/dev/null 2>&1; then
-    echo "User '$username' already exists."
+	echo "User '$username' already exists."
 else # Create the user if it doesn't exist
-adduser --system --no-create-home --disabled-login --group "$username"
-    echo "User '$username' created."
+	adduser --system --no-create-home --disabled-login --group "$username"
+	echo "User '$username' created."
 fi
 
 # Update Nginx configuration
@@ -20,16 +23,14 @@ nginx_config="/etc/nginx/nginx.conf"
 # Check if the configuration file exists
 
 if [ -f "$nginx_config" ]; then # Update the 'user' and 'listen' directives in the configuration file
-sudo sed -i "s/^user .*/user $username;/" "$nginx_config"
-sudo sed -i "s/listen\s*80;/listen 8080;/g" "$nginx_config"
-echo "Nginx configuration updated."
+	sed -i "s/^user .*/user $username;/" "$nginx_config"
+	sed -i "s/listen\s*80;/listen 8080;/g" "$nginx_config"
+	echo "Nginx configuration updated."
 else
-echo "Nginx configuration file not found: $nginx_config"
-exit 1
+	echo "Nginx configuration file not found: $nginx_config"
+	exit 1
 fi
 
 # Restart Nginx to apply the changes
 
 service nginx restart
-
-echo "Nginx has been configured to run as the user '$username' and listen on port 8080."
