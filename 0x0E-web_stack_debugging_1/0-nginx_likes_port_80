@@ -9,5 +9,6 @@ rm /etc/nginx/sites-enabled/default
 sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
 mkdir -p /var/www/html
 chmod -R 755 /var/www
+echo "Hello world" >/var/www/html/index
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
