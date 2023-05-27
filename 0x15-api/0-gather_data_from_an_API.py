@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 api + "todos", params={'userId': employee_id}).json()
             completed = [todo.get("title")
                          for todo in todos if todo.get("completed") is True]
-            print("Employee %s is done with tasks (%d/%d):" %
+            print("Employee %s is done with tasks(%d/%d):" %
                   (user.get('name'), len(completed), len(todos)))
             [print("\t " + item) for item in completed]
         except Exception as err:
