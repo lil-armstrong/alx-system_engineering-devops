@@ -22,8 +22,16 @@ nginx_config="/etc/nginx/nginx.conf"
 
 # Check if the configuration file exists
 
-if [ -f "$nginx_config" ]; then # Update the 'user' and 'listen' directives in the configuration file
-	sed -i "s/^user .*/user $username;/" "$nginx_config"
+if [ -f "$nginx_config" ]; then 
+# Remove commented user directive if present
+	sed -i "/#*\s*user\s\+\w\+/d" "$nginx_config"
+
+	# Update user directive
+	if grep -q "user\s\+\w\+" "$nginx_config"; then
+  	  sed -i "s/^user .*/user $username/" "$nginx_config"
+	else
+	    sed -i "1i user $username;" "$nginx_config"
+	fi
 	sed -i "s/listen\s*80;/listen 8080;/g" "$nginx_config"
 	echo "Nginx configuration updated."
 else
