@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''Get information about a given employee TODO list'''
+import requests
 import sys
 
-import requests
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
