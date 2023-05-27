@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Get information about a given employee TODO list"""
+"""Format and save response to JSON"""
 import json
 import requests
 import sys
