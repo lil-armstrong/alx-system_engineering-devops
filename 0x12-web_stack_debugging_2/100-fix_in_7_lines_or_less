@@ -1,6 +1,6 @@
 #!/bin/bash
 #Concise version
-useradd -r nginx;
+useradd -r nginx
 sed -i "/#*\s*user\s\+\w\+/d" "/etc/nginx/nginx.conf"
 sed -i 's/^user .*/user nginx;/; s/listen\s*80;/listen 8080;/g' /etc/nginx/nginx.conf
 service nginx restart
