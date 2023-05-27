@@ -19,8 +19,10 @@ if __name__ == "__main__":
             todos = requests.get(
                 api + "todos", params={'userId': employee_id}).json()
 
-            csv_rows = [[user.get('id'), user.get(
-                'username'), t.get('completed'), t.get('title')] for t in todos]
+            csv_rows = [[user.get('id'),
+                         user.get('username'),
+                         t.get('completed'),
+                         t.get('title')] for t in todos]
             with open(csv_file, 'w', newline='') as f:
                 csv_writer = csv.writer(f,
                                         quoting=csv.QUOTE_ALL)
