@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Get information about a given employee TODO list'''
+"""Get information about a given employee TODO list"""
 import requests
 import sys
 
