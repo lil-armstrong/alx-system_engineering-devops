@@ -1,5 +1,13 @@
 # 0x16. API advanced
 
+> To check if your module has been documented use 
+
+```bash
+python3 -c 'print(__import__("<my_module>").__doc__)'
+```
+
+> Your code should use the `PEP 8` style
+
 Questions involving APIs are common for interviews. Sometimes they’re as simple as ‘write a Python script that queries a given endpoint’, sometimes they require you to use recursive functions and format/sort the results.
 
 A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
@@ -10,7 +18,7 @@ Write a function that queries the Reddit API and returns the number of subscribe
 
 Hint: No authentication is necessary for most features of the Reddit API. If you’re getting errors related to Too Many Requests, ensure you’re setting a custom User-Agent.
 
-Requirements:
+**Requirements:**
 
     Prototype: def number_of_subscribers(subreddit)
     If not a valid subreddit, return 0.
@@ -70,7 +78,7 @@ bob@dylan $ python3 100-main.py not_a_valid_subreddit 'python java'
 - Results are based on the number of times a keyword appears, not titles it appears in. java java java counts as 3 separate occurrences of java.
 - To make life easier, `java.` or `java!` or `java_` should not count as java
 - If no posts match or the subreddit is invalid, print nothing.
-- NOTE: Invalid subreddits may return a redirect to search results. Ensure that you are NOT following redirects.
+- NOTE: Invalid sub-reddits may return a redirect to search results. Ensure that you are NOT following redirects.
 
 Your code will NOT pass if you are using a loop and not recursively calling the function! This can be done with a loop but the point is to use a recursive function. :)
 

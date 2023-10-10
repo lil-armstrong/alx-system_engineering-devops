@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Count it
+Sub-reddit keyword frequency module
 
 Query the Reddit API for hot articles, 
 Parse the title and 
@@ -8,7 +8,9 @@ Print a sorted count of given keywords (case-insensitive, delimited by spaces)
 """
 
 from typing import List
+
 import requests
+
 
 def count_words(subreddit:str, word_list:List[str], log:dict|None = None,
                  data:dict | None = None) -> str:
@@ -61,17 +63,3 @@ not titles it appears in
     if freq:
         log[keyword] = freq
     return count_words(subreddit, deduplicated, log, data)
-    
-    # Given a sub-reddit channel
-    # If subreddit is not found
-    # then
-    # return null
-    # else
-    # Search for the hot articles
-    # Given a list of hot articles
-    # Find all occurrences of the keywords in the title
-    # For each given keyword found in the title, increment the frequency counter
-    # Repeat step 
-    # Then output result in the format
-    # <keyword>: <count>
-    # Words with no matches should be skipped and not printed
