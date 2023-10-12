@@ -3,9 +3,10 @@
 Recursively queries the Reddit API and returns a list 
 containing the titles of all hot articles for a given subreddit.
 """
-from typing import List
+
 
 import requests
+from typing import List
 
 
 def recurse(subreddit, hot_list=[], after=None, limit:int = 25)->List[str]:
