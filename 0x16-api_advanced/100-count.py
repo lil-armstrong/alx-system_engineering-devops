@@ -7,8 +7,8 @@ Parse the title and
 Print a sorted count of given keywords (case-insensitive, delimited by spaces)
 """
 
-from typing import List
 import requests
+from typing import List
 
 
 def count_words(subreddit: str, word_list: List[str], log: dict | None = None,

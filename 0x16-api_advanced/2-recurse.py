@@ -5,8 +5,8 @@ containing the titles of all hot articles for a given subreddit.
 """
 
 
-from typing import List
 import requests
+from typing import List
 
 
 def recurse(
