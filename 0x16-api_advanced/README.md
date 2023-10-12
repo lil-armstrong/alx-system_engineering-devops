@@ -83,3 +83,18 @@ bob@dylan $ python3 100-main.py not_a_valid_subreddit 'python java'
 Your code will NOT pass if you are using a loop and not recursively calling the function! This can be done with a loop but the point is to use a recursive function. :)
 
 Disclaimer: number presented in this example cannot be accurate now - Reddit is hot articles are always changing.
+
+
+**TIP**:
+You can use available python library linters that comply with PEP 8. One of such available linter is the `autopep8` package. Enter the following command ot install the linter:
+
+```bash
+pip install autopep8 virtualenv
+source env/bin/activate
+```
+
+Using `autopep8` to fix file:
+
+```bash
+autopep8 --in-place --aggressive --aggressive <file_path>
+```
