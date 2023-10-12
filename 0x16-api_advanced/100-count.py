@@ -48,7 +48,7 @@ not titles it appears in
                         allow_redirects=False)
 
         if res.status_code != 200:
-            return
+            return None
             
         data = res.json().get("data").get("children")    
 
