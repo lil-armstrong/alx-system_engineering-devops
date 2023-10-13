@@ -13,7 +13,7 @@ def recurse(
         subreddit,
         hot_list: List[str] | None = None,
         after: str | None = None,
-        count: int | None = None) -> List[str]:
+        count: int = 0) -> List[str]:
     """
     Query the sub-reddit
     return a list of titles of all hot articles
@@ -27,30 +27,27 @@ def recurse(
     headers = {
         "User-agent": "linux:0x016.api.advanced:v1.0.0"
     }
-    limit = 25
     params = {
-        "limit": limit,
+        "limit": 100,
         "after": after,
         "count": count
     }
-    if count is None:
-        count = limit
-    else:
-        count += limit
 
     res = requests.get(url, headers=headers, params=params,
                        allow_redirects=False)
-    if res.status_code == 200:
-        data = res.json().get("data")
-        children = data.get("children")
-        after = data.get("after")
-
-        for get_data in children:
-            title: str = get_data.get("data").get("title")
-            titles.append(title)
-
-        if after is not None:
-            return recurse(subreddit, titles, after, count)
-    else:
+    if res.status_code != 200:
         return None
+
+    data = res.json().get("data")
+    children = data.get("children")
+    after = data.get("after")
+    count = data.get('dist')
+
+    for get_data in children:
+        title: str = get_data.get("data").get("title")
+        titles.append(title)
+
+    if after is not None:
+        return recurse(subreddit, titles, after, count)
+
     return titles
