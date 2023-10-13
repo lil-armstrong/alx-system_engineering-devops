@@ -11,7 +11,7 @@ from typing import List
 
 def recurse(
         subreddit,
-        hot_list=None,
+        hot_list: List[str] | None = None,
         after: str | None = None,
         count: int | None = None) -> List[str]:
     """
