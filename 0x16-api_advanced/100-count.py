@@ -64,5 +64,4 @@ not titles it appears in
                 if word == keyword:
                     log[keyword] = log.get(keyword, 0) + 1
 
-    
     return count_words(subreddit, deduplicated, log, after, count)
