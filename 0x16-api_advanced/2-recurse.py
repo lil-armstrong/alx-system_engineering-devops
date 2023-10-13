@@ -37,12 +37,14 @@ def recurse(
         count = limit
     else:
         count += limit
+
     res = requests.get(url, headers=headers, params=params,
                        allow_redirects=False)
     if res.status_code == 200:
         data = res.json().get("data")
         children = data.get("children")
         after = data.get("after")
+
         for get_data in children:
             title: str = get_data.get("data").get("title")
             titles.append(title)
