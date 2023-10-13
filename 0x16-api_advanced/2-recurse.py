@@ -48,7 +48,6 @@ def recurse(
             titles.append(title)
 
         if after is not None:
-            # Recursive call with updated 'after' parameter to fetch the next page
             return recurse(subreddit, titles, after, count)
     else:
         return None
