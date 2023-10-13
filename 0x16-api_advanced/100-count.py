@@ -9,6 +9,7 @@ Print a sorted count of given keywords (case-insensitive, delimited by spaces)
 import requests
 from typing import List
 
+
 def count_words(subreddit: str, word_list: List[str], log: dict | None = None,
                 after: str | None = None, count: int | None = None) -> str:
     """
