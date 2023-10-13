@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 Sub-reddit keyword frequency module
-
 Query the Reddit API for hot articles,
 Parse the title and
 Print a sorted count of given keywords (case-insensitive, delimited by spaces)
@@ -9,7 +8,6 @@ Print a sorted count of given keywords (case-insensitive, delimited by spaces)
 
 import requests
 from typing import List
-
 
 def count_words(subreddit: str, word_list: List[str], log: dict | None = None,
                 after: str | None = None, count: int | None = None) -> str:
