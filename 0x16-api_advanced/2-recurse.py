@@ -12,8 +12,8 @@ from typing import List
 def recurse(
         subreddit,
         hot_list=None,
-        after=None,
-        limit: int = 25) -> List[str]:
+        after: str | None = None,
+        count: int | None = None) -> List[str]:
     """
     Query the sub-reddit
     return a list of titles of all hot articles
@@ -27,25 +27,29 @@ def recurse(
     headers = {
         "User-agent": "linux:0x016.api.advanced:v1.0.0"
     }
+    limit = 25
     params = {
         "limit": limit,
-        "after": after
+        "after": after,
+        "count": count
     }
+    if count is None:
+        count = limit
+    else:
+        count += limit
     res = requests.get(url, headers=headers, params=params,
                        allow_redirects=False)
-    if res.status_code != 200:
+    if res.status_code == 200:
+        data = res.json().get("data")
+        children = data.get("children")
+        after = data.get("after")
+        for get_data in children:
+            title: str = get_data.get("data").get("title")
+            titles.append(title)
+
+        if after is not None:
+            # Recursive call with updated 'after' parameter to fetch the next page
+            return recurse(subreddit, titles, after, count)
+    else:
         return None
-
-    data = res.json().get("data")
-    children = data.get("children")
-    after = data.get("after")
-
-    for get_data in children:
-        title: str = get_data.get("data").get("title")
-        titles.append(title)
-
-    if after is not None:
-        # Recursive call with updated 'after' parameter to fetch the next page
-        return recurse(subreddit, titles, after, limit - len(titles))
-
     return titles
